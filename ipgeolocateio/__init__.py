@@ -2,7 +2,7 @@
 
 Zero-dependency (stdlib only). Python 3.9+.
 
-    from ipgeolocationapi import Client
+    from ipgeolocateio import Client
     c = Client()                # free tier, no key
     c.lookup("8.8.8.8")
     c = Client("ipa_YOUR_KEY")  # paid features
