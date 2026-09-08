@@ -16,7 +16,7 @@ import urllib.parse
 import urllib.request
 
 BASE = "https://ipgeolocationapi.io"
-__version__ = "1.0.0"
+__version__ = "1.0.3"
 
 
 class APIError(Exception):

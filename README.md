@@ -1,4 +1,4 @@
-# @ipgeolocationapi/mcp
+# ipgeolocationapi-mcp
 
 MCP server for [ipgeolocationapi.io](https://ipgeolocationapi.io): IP intelligence
 as native tools for Claude Desktop, Cursor, and any MCP-compatible AI.
@@ -15,7 +15,7 @@ Add to `claude_desktop_config.json` (Claude Desktop > Settings > Developer):
   "mcpServers": {
     "ipgeolocationapi": {
       "command": "npx",
-      "args": ["-y", "@ipgeolocationapi/mcp"],
+      "args": ["-y", "ipgeolocationapi-mcp"],
       "env": {
         "IPGEO_API_KEY": "ipa_optional_paid_key"
       }
@@ -25,7 +25,7 @@ Add to `claude_desktop_config.json` (Claude Desktop > Settings > Developer):
 ```
 
 Restart Claude Desktop. Done. The first run creates a small Python runtime
-(one time); macOS and Linux ship with a compatible Python by default.
+(one time); Linux ships with a compatible Python by default; on macOS install Python 3.10+ from python.org or Homebrew if the wrapper cannot find one.
 
 Cursor and other MCP hosts: same shape, point the command at this package.
 

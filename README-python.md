@@ -6,13 +6,13 @@ the free IP geolocation API. Stdlib only, Python 3.9+.
 ## Install
 
 ```bash
-pip install ipgeolocationapi
+pip install ipgeolocateio
 ```
 
 ## Quickstart (free tier, no key)
 
 ```python
-from ipgeolocationapi import Client
+from ipgeolocateio import Client
 
 c = Client()
 geo = c.lookup("8.8.8.8")

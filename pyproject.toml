@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ipgeolocateio"
-version = "1.0.2"
+version = "1.0.3"
 description = "Zero-dependency Python client for ipgeolocationapi.io: IP geolocation, ASN, timezone, currency, security and bulk lookups"
-readme = "README.md"
+readme = "README-python.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [{ name = "ipgeolocationapi.io", email = "support@ipgeolocationapi.io" }]
@@ -29,7 +29,7 @@ classifiers = [
 [project.urls]
 Homepage = "https://ipgeolocationapi.io"
 Documentation = "https://ipgeolocationapi.io/docs"
-Repository = "https://github.com/thebigasif/ipgeolocationapi.io"
+Repository = "https://github.com/thebigasif/ipgeolocationapi-mcp"
 Changelog = "https://ipgeolocationapi.io/blog"
 
 [tool.setuptools]

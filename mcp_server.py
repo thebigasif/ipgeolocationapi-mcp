@@ -48,8 +48,10 @@ async def ip_lookup(ip: str, fields: str = "") -> dict:
         ip: The address or domain to look up, e.g. "8.8.8.8" or "cloudflare.com".
         fields: Optional comma list to slim the response, e.g. "ip,country,city,connection.asn".
     """
+    if not ip or not ip.strip():
+        return {"success": False, "message": "Provide an IP or domain, e.g. 8.8.8.8"}
     params = {"fields": fields} if fields else None
-    return _get(f"/{ip}", params)
+    return _get(f"/{ip.strip()}", params)
 
 
 @mcp.tool()
@@ -80,20 +82,20 @@ async def asn_lookup(asn: str) -> dict:
     route counts, network type. Free.
 
     Args:
-        asn: AS number ("13335") or a search term ("cloudflare").
+        asn: AS number, e.g. "13335".
     """
-    return _get(f"/asn/{asn}")
+    return _get("/asn", {"asn": asn})
 
 
 @mcp.tool()
-async def timezone_info(zone: str) -> dict:
-    """Get current local time, UTC offset and DST transition dates for an IANA
-    timezone zone. Free.
+async def timezone_info(ip: str) -> dict:
+    """Get current local time, UTC offset and DST transition dates for the
+    timezone an IP lives in. Free.
 
     Args:
-        zone: IANA zone id, e.g. "America/New_York".
+        ip: The address to locate, e.g. "8.8.8.8" or "1.1.1.1".
     """
-    return _get(f"/timezone/{zone.replace('/', '%2F')}")
+    return _get(f"/{ip}", {"fields": "ip,country,city,timezone"})
 
 
 @mcp.tool()
@@ -109,14 +111,27 @@ async def timezone_convert(time: str, from_zone: str, to_zone: str) -> dict:
 
 
 @mcp.tool()
-async def astronomy(ip: str) -> dict:
+async def astronomy(ip: str = "", latitude: float = None, longitude: float = None, date: str = "") -> dict:
     """Sunrise, sunset, twilight tiers, golden and blue hour, moon phase and sun
-    position for an IP's location. Free.
+    position. Free. Give an IP, or exact coordinates with an optional date
+    (YYYY-MM-DD).
 
     Args:
         ip: The address whose location to compute for, e.g. "8.8.8.8".
+        latitude: Decimal latitude if you know the spot, e.g. 40.71.
+        longitude: Decimal longitude if you know the spot, e.g. -74.01.
+        date: Optional date (YYYY-MM-DD); defaults to today.
     """
-    return _get("/astronomy", {"ip": ip})
+    params = {}
+    if latitude is not None and longitude is not None:
+        params = {"lat": latitude, "lon": longitude}
+    elif ip:
+        params = {"ip": ip}
+    else:
+        return {"success": False, "message": "Give an IP, or latitude and longitude."}
+    if date:
+        params["date"] = date
+    return _get("/astronomy", params)
 
 
 @mcp.tool()
