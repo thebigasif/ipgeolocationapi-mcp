@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ipgeolocateio"
+version = "1.0.0"
+description = "Zero-dependency Python client for ipgeolocationapi.io: IP geolocation, ASN, timezone, currency, security and bulk lookups"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "ipgeolocationapi.io", email = "support@ipgeolocationapi.io" }]
+keywords = ["ip", "geolocation", "ip-address", "geoip", "asn", "timezone", "vpn", "proxy", "api", "security"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://ipgeolocationapi.io"
+Documentation = "https://ipgeolocationapi.io/docs"
+Repository = "https://github.com/thebigasif/ipgeolocationapi.io"
+Changelog = "https://ipgeolocationapi.io/blog"
+
+[tool.setuptools]
+packages = ["ipgeolocationapi"]
