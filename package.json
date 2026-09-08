@@ -1,0 +1,33 @@
+{
+  "name": "ipgeolocationapi-mcp",
+  "version": "1.0.1",
+  "description": "MCP server for ipgeolocationapi.io: 10 IP intelligence tools (geolocation, ASN, timezone, security/VPN detection, company, astronomy, user agent, abuse contact, bulk) for Claude Desktop, Cursor and any MCP host.",
+  "bin": {
+    "ipgeolocationapi-mcp": "bin/cli.js"
+  },
+  "files": [
+    "bin/cli.js",
+    "mcp_server.py",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ip-geolocation",
+    "geoip",
+    "claude",
+    "cursor",
+    "ai-tools",
+    "vpn-detection",
+    "asn"
+  ],
+  "license": "MIT",
+  "homepage": "https://ipgeolocationapi.io/mcp-api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebigasif/ipgeolocationapi.io.git"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
