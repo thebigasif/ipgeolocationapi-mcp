@@ -1,5 +1,7 @@
 # ipgeolocationapi-mcp
 
+[![M8ven Score](https://m8ven.ai/badge/mcp/thebigasif/ipgeolocationapi-mcp)](https://m8ven.ai/mcp/thebigasif/ipgeolocationapi-mcp)
+
 MCP server for [ipgeolocationapi.io](https://ipgeolocationapi.io): IP intelligence
 as native tools for Claude Desktop, Cursor, and any MCP-compatible AI.
 
